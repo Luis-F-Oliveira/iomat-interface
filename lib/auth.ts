@@ -1,6 +1,12 @@
-import { formSchema } from '@/app/login/page'
-import { z } from 'zod'
+'use server'
 
-export function auth(values: z.infer<typeof formSchema>) {
-  console.log(values)
+import { api } from './axios';
+import { cookies } from 'next/headers';
+import { FormSchema } from '@/app/login/forms';
+import { z } from 'zod';
+
+export async function auth(data: z.infer<typeof FormSchema>) {
+  const response = await api.post('login', data)
+  cookies().set('auth', 'authenticate')
+  return response.data.user
 }
