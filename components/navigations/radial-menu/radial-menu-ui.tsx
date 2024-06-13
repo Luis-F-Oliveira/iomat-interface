@@ -1,7 +1,9 @@
 "use client"
 
+import { logout } from '@/lib/logout'
 import { Plus, BarChart3, Info, Settings, LayoutDashboard, LogOut } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 interface RadialMenuUiProps {
@@ -10,6 +12,7 @@ interface RadialMenuUiProps {
 
 export const RadialMenuUi: React.FC<RadialMenuUiProps> = ({ data }) => {
   const [open, setOpen] = React.useState(false)
+  const router = useRouter()
   const menusCss = `dark:hover:bg-neutral-950 text-white hover:bg-white 
   rounded-full w-8 h-8 p-1.5 cursor-pointer transition-colors hover:text-black
   dark:text-black dark:hover:text-white`
@@ -36,6 +39,12 @@ export const RadialMenuUi: React.FC<RadialMenuUiProps> = ({ data }) => {
     },
   ]
 
+  const handleLogout = async () => {
+    if (await logout()) {
+      router.push('/login')
+    }
+  }
+
   return (
     <div className='fixed bottom-5 left-1/2 transform -translate-x-1/2'>
       <div className='flex flex-col gap-2 items-center'>
@@ -49,6 +58,7 @@ export const RadialMenuUi: React.FC<RadialMenuUiProps> = ({ data }) => {
               ) : null
             ))}
             <LogOut
+              onClick={handleLogout}
               className='text-red-500 hover:bg-red-500 rounded-full h-8 w-8 p-1.5
               hover:text-white cursor-pointer'
             />
