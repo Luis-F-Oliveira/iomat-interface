@@ -14,7 +14,7 @@ export const BreadcrumbDinamic = () => {
   const pathname = usePathname()
   const parts = pathname.split('/').filter(part => part !== '')
   return (
-    <section className="fixed bottom-5">
+    <section className="fixed bottom-5 left-5">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

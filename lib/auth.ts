@@ -7,6 +7,7 @@ import { z } from 'zod';
 
 export async function auth(data: z.infer<typeof FormSchema>) {
   const response = await api.post('login', data)
-  cookies().set('auth', 'authenticate')
+  const { token } = response.data
+  cookies().set('auth-token', token)
   return response.data.user
 }

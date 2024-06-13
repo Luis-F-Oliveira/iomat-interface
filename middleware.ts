@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server"
 
 export function middleware(req: NextRequest) {
   const electronToken = req.cookies.get('application')?.value
-  const authToken = req.cookies.get('auth')?.value
+  const authToken = req.cookies.get('auth-token')?.value
 
   if (!authToken && electronToken && !req.nextUrl.pathname.startsWith('/login')) {
     return Response.redirect(new URL('/login', req.url))
