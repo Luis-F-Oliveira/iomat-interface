@@ -1,7 +1,6 @@
 import React from 'react';
 import { BreadcrumbDinamic } from '@/components/breadcrumb/breadcrumb-dinamic';
 import { RadialMenu } from '@/components/navigations';
-import { UserProvider } from '@/context/user';
 
 export default function DashboardLayout({
   children
@@ -9,12 +8,12 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <UserProvider>
+    <div>
       <main className='container pt-5'>
         {children}
       </main>
       <BreadcrumbDinamic />
       <RadialMenu />
-    </UserProvider>
+    </div>
   )
 }

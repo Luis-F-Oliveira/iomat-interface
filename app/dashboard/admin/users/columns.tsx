@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link"
 
 export type IUser = {
   id: number
@@ -38,13 +39,22 @@ export const columns: ColumnDef<IUser>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(user.id.toString())}
+              className="cursor-pointer"
+              onClick={() => navigator.clipboard.writeText(user.entry_code)}
             >
-              Copy payment ID
+              Copiar código de entrada
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <Link href={`/dashboard/admin/users/${user.id}/update`}>
+              <DropdownMenuItem className="cursor-pointer">
+                Atualizar
+              </DropdownMenuItem>
+            </Link>
+            <Link href={`/dashboard/admin/users/${user.id}/delete`}>
+              <DropdownMenuItem className="cursor-pointer">
+                Apagar
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       )

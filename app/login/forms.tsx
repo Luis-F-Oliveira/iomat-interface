@@ -20,7 +20,6 @@ import {
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { auth } from "@/lib/auth"
-import { useUser } from "@/context/user"
 
 export const FormSchema = z.object({
   entry_code: z.string().min(6, {
@@ -30,7 +29,6 @@ export const FormSchema = z.object({
 
 export function LoginForm() {
   const router = useRouter()
-  const { loginUser } = useUser()
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -42,7 +40,6 @@ export function LoginForm() {
     const user = await auth(data)
     
     if (user) {
-      loginUser(user)
       router.push('/dashboard/overview/analytics')
     }
   }

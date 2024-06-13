@@ -61,7 +61,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <Link href='/dashboard/admin/create/users'>
+        <Link href='/dashboard/admin/users/create'>
           <UserPlus />
         </Link>
       </div>
