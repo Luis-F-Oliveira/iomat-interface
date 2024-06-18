@@ -45,14 +45,9 @@ export const columns: ColumnDef<IUser>[] = [
               Copiar código de entrada
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <Link href={`/dashboard/admin/users/${user.id}/update`}>
+            <Link href={`/dashboard/admin/users/${user.id}/edit`}>
               <DropdownMenuItem className="cursor-pointer">
-                Atualizar
-              </DropdownMenuItem>
-            </Link>
-            <Link href={`/dashboard/admin/users/${user.id}/delete`}>
-              <DropdownMenuItem className="cursor-pointer">
-                Apagar
+                Editar
               </DropdownMenuItem>
             </Link>
           </DropdownMenuContent>

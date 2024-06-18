@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      minHeight: {
+        'container': 'calc(100vh - 150px)'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
