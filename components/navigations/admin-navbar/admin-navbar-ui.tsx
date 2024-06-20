@@ -22,8 +22,8 @@ export const AdminNavbarUi: React.FC<AdminNavbarUiProps> = ({ data }) => {
     },
     {
       name: "Coleta de Dados",
-      url: "",
-      permissions: ["admin", "moderador"]
+      url: "/dashboard/admin/data",
+      permissions: ["extrator"]
     }
   ]
 

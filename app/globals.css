@@ -15,6 +15,18 @@
   border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
+.rdp [aria-hidden="true"] {
+  @apply hidden;
+}
+
+.rdp-vhidden {
+  @apply hidden;
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
