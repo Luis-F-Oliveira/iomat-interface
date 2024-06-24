@@ -17,7 +17,7 @@ export const AdminNavbarUi: React.FC<AdminNavbarUiProps> = ({ data }) => {
     },
     {
       name: "Permissões",
-      url: "",
+      url: "/dashboard/admin/data/log",
       permissions: ["admin", "moderador"]
     },
     {

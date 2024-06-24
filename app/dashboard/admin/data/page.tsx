@@ -27,7 +27,7 @@ export default function Page() {
   ]
 
   return (
-    <div className='grid grid-cols-3 gap-3'>
+    <div className='grid xl:grid-cols-3 grid-cols-1 gap-3 mb-14'>
       {menus.map((items, index) => (
         <Card className='h-auto' key={index}>
           <CardHeader>

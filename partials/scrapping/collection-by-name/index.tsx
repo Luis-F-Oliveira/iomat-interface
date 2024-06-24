@@ -25,6 +25,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { CardContent } from '@/components/ui/card'
+import { api } from '@/lib/anext'
 
 export const formSchema = z.object({
   name: z.string().min(1, {
@@ -43,8 +44,16 @@ export const CollectionByName = () => {
     }
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function formatData(values: z.infer<typeof formSchema>) {
+    const formattedData = {
+      name: values.name,
+      date: format(values.date, 'dd/MM/yyyy', { locale: ptBR })
+    }
+    return formattedData
+  }
 
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+   console.log(formatData(values))
   }
 
   return (
