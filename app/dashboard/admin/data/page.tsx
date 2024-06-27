@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { CollectionByDate, CollectionByName, CurrentDayCollection } from '@/partials/scrapping';
+import { CollectionByDate, CollectionByName, CurrentDayCollection, ServantsFile } from '@/partials/scrapping';
 
 export default function Page() {
   const menus = [
@@ -27,18 +27,21 @@ export default function Page() {
   ]
 
   return (
-    <div className='grid xl:grid-cols-3 grid-cols-1 gap-3 mb-14'>
-      {menus.map((items, index) => (
-        <Card className='h-auto' key={index}>
-          <CardHeader>
-            <CardTitle className='uppercase'>
-              {items.title}
-            </CardTitle>
-            <CardDescription>{items.description}</CardDescription>
-          </CardHeader>
-          {items.body}
-        </Card>
-      ))}
-    </div>
+    <>
+      <ServantsFile />
+      <div className='grid xl:grid-cols-3 grid-cols-1 gap-3 mb-14'>
+        {menus.map((items, index) => (
+          <Card className='h-auto' key={index}>
+            <CardHeader>
+              <CardTitle className='uppercase'>
+                {items.title}
+              </CardTitle>
+              <CardDescription>{items.description}</CardDescription>
+            </CardHeader>
+            {items.body}
+          </Card>
+        ))}
+      </div>
+    </>
   )
 }

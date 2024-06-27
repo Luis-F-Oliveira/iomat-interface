@@ -1,5 +1,5 @@
-import React from 'react';
-import { AdminNavbar } from '@/components/navigations';
+import React from 'react'
+import { AdminNavbar } from '@/components/navigations'
 
 export default function AdminLayout({
   children
