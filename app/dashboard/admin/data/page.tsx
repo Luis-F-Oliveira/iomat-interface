@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle
-} from '@/components/ui/card';
-import { CollectionByDate, CollectionByName, CurrentDayCollection, ServantsFile } from '@/partials/scrapping';
+} from '@/components/ui/card'
+import {
+  CollectionByDate,
+  CollectionByName,
+  CurrentDayCollection,
+  ServantsFile
+} from '@/partials/scrapping'
 
 export default function Page() {
   const menus = [
@@ -29,7 +34,7 @@ export default function Page() {
   return (
     <>
       <ServantsFile />
-      <div className='grid xl:grid-cols-3 grid-cols-1 gap-3 mb-14'>
+      <div className='grid xl:grid-cols-3 grid-cols-1 gap-3'>
         {menus.map((items, index) => (
           <Card className='h-auto' key={index}>
             <CardHeader>

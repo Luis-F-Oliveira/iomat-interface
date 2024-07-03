@@ -12,7 +12,7 @@ const CreateUserContext = createContext({} as CreateUserContextProps)
 export function useCreateUser() {
   const context = useContext(CreateUserContext)
   if (!context) {
-    throw new Error('useCreateUser deve ser usando dentro de um CreateUserProvider')
+    throw new Error('useCreateUser must be used within a CreateUserProvider')
   }
   return context
 }

@@ -13,12 +13,12 @@ export const AdminNavbarUi: React.FC<AdminNavbarUiProps> = ({ data }) => {
     {
       name: "Usuários",
       url: "/dashboard/admin/users",
-      permissions: ["admin", "moderador"]
+      permissions: ["moderador"]
     },
     {
-      name: "Permissões",
-      url: "/dashboard/admin/data/log",
-      permissions: ["admin", "moderador"]
+      name: "Dados Iomat",
+      url: "/dashboard/admin/iomat",
+      permissions: ["moderador"]
     },
     {
       name: "Coleta de Dados",
