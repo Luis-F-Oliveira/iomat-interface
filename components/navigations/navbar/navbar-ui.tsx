@@ -37,7 +37,7 @@ export const NavbarUi: React.FC<Props> = ({ navigations, roles, permissions }) =
   }, [pathname])
 
   return (
-    <nav className="pr-5 pt-5 flex justify-end items-center">
+    <nav className="pr-5 pt-5">
       <ul className="flex items-center gap-1">
         {navigations.map((items, index) => {
           if (items.route !== path) {
