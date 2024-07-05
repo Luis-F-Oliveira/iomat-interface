@@ -1,5 +1,4 @@
 import React from 'react'
-import { AdminNavbar } from '@/components/navigations'
 
 export default function AdminLayout({
   children
@@ -8,7 +7,6 @@ export default function AdminLayout({
 }) {
   return (
     <div className='container'>
-      <AdminNavbar />
       {children}
     </div>
   )

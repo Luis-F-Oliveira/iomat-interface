@@ -1,6 +1,6 @@
 import React from 'react';
 import { BreadcrumbDinamic } from '@/components/breadcrumb/breadcrumb-dinamic';
-import { RadialMenu } from '@/components/navigations';
+import { Navbar, RadialMenu } from '@/components/navigations';
 
 export default function DashboardLayout({
   children
@@ -9,6 +9,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div>
+      <Navbar />
       <main className='container pt-5'>
         {children}
       </main>

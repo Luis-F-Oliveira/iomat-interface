@@ -1,4 +1,7 @@
 import { RadialMenu } from "./radial-menu/radial-menu"
-import { AdminNavbar } from "./admin-navbar/admin-navbar"
+import { Navbar } from "./navbar/navbar"
 
-export { RadialMenu, AdminNavbar }
+export { 
+  RadialMenu,
+  Navbar
+}
